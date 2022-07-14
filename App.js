@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Splash from './screens/Splash';
+import Home from './screens/Home';
 const Stack = createNativeStackNavigator();
-
 
 export default function App() {
   return (
@@ -10,7 +11,8 @@ export default function App() {
       <StatusBar hidden={false}/>
       <NavigationContainer>
         <Stack.Navigator>
-          
+          <Stack.Screen name='Splash' options={{headerShown: false}} component={Splash} />
+          <Stack.Screen name="Home" options={{headerShown: false}} component={Home} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
